@@ -1,0 +1,60 @@
+.timer {
+  text-align: center;
+  animation: slideIn 0.6s ease-out;
+}
+
+.timer-display {
+  font-size: 5rem;
+  font-weight: 900;
+  color: #00ffff;
+  text-shadow: 0 0 30px rgba(0, 255, 255, 0.6);
+  transition: all 0.3s ease;
+  line-height: 1;
+}
+
+.timer.warning .timer-display {
+  color: #ffff00;
+  text-shadow: 0 0 30px rgba(255, 255, 0, 0.8);
+  animation: timerWarning 0.3s ease infinite;
+}
+
+@keyframes timerWarning {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.timer-bar {
+  width: 300px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  margin-top: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 255, 255, 0.3);
+}
+
+.timer-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #00ffff, #00ff00);
+  border-radius: 10px;
+  transition: width 0.3s linear;
+}
+
+.timer.warning .timer-fill {
+  background: linear-gradient(90deg, #ffff00, #ff0000);
+}
+
+@media (max-width: 768px) {
+  .timer-display {
+    font-size: 3.5rem;
+  }
+
+  .timer-bar {
+    width: 250px;
+  }
+}
